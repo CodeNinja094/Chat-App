@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.supportMain {
+    width: 100vw;
+    height: fit-content;
+
+}
+
+.supportSec1 {
+    font-family: "Signika", sans-serif;
+    padding: 150px 0 100px 0;
+    width: 100vw;
+    height: fit-content;
+    background: linear-gradient(to right, #9334ea, #5045e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supportSec1 div {
+    width: fit-content;
+    color: white;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.supportSec1 div h1 {
+    font-size: 48px;
+    text-align: center;
+}
+
+.supportSec1 div p {
+    font-size: 22px;
+    text-align: center;
+}
+
+.supportSec2 {
+    width: 100vw;
+    height: fit-content;
+    padding: 40px 0;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.supportSec2> :first-child {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.supportSec2> :first-child>* {
+    border-radius: 20px;
+    width: 400px;
+    height: fit-content;
+    padding: 25px 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.supportSec2> :first-child>* i {
+    font-size: 48px;
+}
+
+.supportSec2> :first-child>* h1 {
+    font-family: "Signika", sans-serif;
+    font-size: 30px;
+}
+
+.supportSec2> :first-child>* p {
+    font-size: 18px;
+}
+
+.supportSec2> :first-child>* a {
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.supportSec2> :last-child {
+    width: 100vw;
+    height: fit-content;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.supportSec2> :last-child> :first-child {
+    font-family: "Signika", sans-serif;
+    font-size: 35px;
+    color: white;
+}
+
+.supportSec2> :last-child> :last-child {
+    width: fit-content;
+    height: fit-content;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

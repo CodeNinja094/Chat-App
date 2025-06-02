@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100vw;
+    height: 65px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header.scrolled {
+  background-color: #1e1e1e; /* or any color */
+}
+
+.logo {
+    height: 100%;
+    width: max(22vw, 200px);
+    color: white;
+    font-size: 36px;
+    font-weight: 800;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerEleDiv {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: clamp(8px, 2vw, 32px);
+}
+
+.headerEle {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: medium;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountActionDiv {
+    height: 100%;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acountAction {
+    color: white;
+    text-decoration: none;
+    height: fit-content;
+    padding: 5px 10px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountActionDiv> :nth-child(3) {
+    font-size: larger !important;
+    color: white !important;
+    background-color: rgb(81, 113, 219) !important;
+
+}
+
+.acountAction:hover {
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
