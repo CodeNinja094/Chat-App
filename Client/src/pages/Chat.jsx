@@ -1,10 +1,17 @@
 import './Chat.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { io } from 'socket.io-client';
+
+const socket = io('http://localhost:5000');
 
 function Chat() {
     let [toggleChatBar, settoggleChatBar] = useState(true);
     let [chatstartted, setchatstartted] = useState(false);
+
+    const [message, setMessage] = useState('');
+    const [chat, setChat] = useState([]);
+
     return (
         <>
             <main className="chatMain">
@@ -40,7 +47,17 @@ function Chat() {
                             <i className='bi bi-clock-fill'></i>
                         </div>
                     </div>
-                    {chatstartted ? <ChatInterface /> : <StartChatInterface setchatstartted={setchatstartted} />}
+
+                    <h2>Chat</h2>
+                    <div style={{ marginBottom: 20 }}>
+                        {chat.map((msg, index) => (
+                            <div key={index} style={{ textAlign: msg.self ? 'right' : 'left' }}>
+                                <span>{msg.message}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {chatstartted ? <ChatInterface message={message} setMessage={setMessage} setChat={setChat} /> : <StartChatInterface setchatstartted={setchatstartted} />}
 
                 </section>
             </main>
@@ -113,7 +130,29 @@ function StartChatInterface({ setchatstartted }) {
     )
 }
 
-function ChatInterface() {
+function ChatInterface({message, setMessage, setChat}) {
+    const sendMessage = () => {
+        socket.emit('send_message', { message });
+        setChat(prev => [...prev, { message, self: true }]);
+        setMessage('');
+    };
+
+    useEffect(() => {
+        socket.on('receive_message', (data) => {
+            setChat(prev => [...prev, { message: data.message, self: false }]);
+        });
+
+        return () => {
+            socket.off('receive_message');
+        };
+    }, [setChat]);
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    }
+
     return (
         <div className='chatInterfaceDiv'>
             <div className="chatInterfaceDiv-wrapper">
@@ -125,7 +164,7 @@ function ChatInterface() {
                         Start
                     </div>
                 </div>
-                <input type="text" placeholder='Send messages' className='chatInput' />
+                <input type="text" placeholder='Send messages' className='chatInput' value={message} onChange={e => setMessage(e.target.value)} onKeyDown={handleKeyDown} />
             </div>
         </div>
     )
