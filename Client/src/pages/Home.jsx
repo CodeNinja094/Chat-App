@@ -19,8 +19,8 @@ function Home() {
                         <p>Experience a random chat alternative to find <br />friends, connect with people, and chat <br />with strangers from all over the world!</p>
 
                         <div className="chatBtn">
-                            <Link><i className="bi bi-chat-left-heart"></i>Text Chat</Link>
-                            <Link> <i class="bi bi-camera-reels"></i>Video Chat</Link>
+                            <Link to={'/chat'}><i className="bi bi-chat-left-heart"></i>Text Chat</Link>
+                            <Link to={'/blog'}> <i class="bi bi-camera-reels"></i>Video Chat</Link>
                         </div>
                     </div>
                     <div className='homeImg'>

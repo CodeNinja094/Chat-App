@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Support from './pages/Support';
+import Chat from './pages/Chat';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allRoutes = createBrowserRouter(
@@ -26,6 +27,10 @@ let allRoutes = createBrowserRouter(
     {
       path: 'support',
       element: <Support />
+    },
+    {
+      path: 'chat',
+      element: <Chat />
     }
   ]
 )
