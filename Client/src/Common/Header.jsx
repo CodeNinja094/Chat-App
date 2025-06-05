@@ -29,8 +29,8 @@ function Header() {
             </div>
             <div className="accountActionDiv">
                 <Link className="acountAction" to={'/'}>Help</Link>
-                <Link className="acountAction" to={'/'}>LogIn</Link>
-                <Link className="acountAction" to={'/'}>Register</Link>
+                <Link className="acountAction" to={'/login'}>LogIn</Link>
+                <Link className="acountAction" to={'/register'}>Register</Link>
             </div>
         </div>
     )

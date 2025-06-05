@@ -8,6 +8,8 @@ import Blog from './pages/Blog';
 import About from './pages/About';
 import Support from './pages/Support';
 import Chat from './pages/Chat';
+import Login from './pages/LogIn';
+import Register from './pages/Register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allRoutes = createBrowserRouter(
@@ -31,13 +33,21 @@ let allRoutes = createBrowserRouter(
     {
       path: 'chat',
       element: <Chat />
+    },
+    {
+      path: 'login',
+      element: <Login />
+    },
+    {
+      path: 'register',
+      element: <Register />
     }
   ]
 )
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={allRoutes}/>
+    <RouterProvider router={allRoutes} />
   </React.StrictMode>
 );
 
