@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.authMain {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parent {
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+    display: flex;
+}
+
+
+.content {
+    width: 500px;
+    height: fit-content;
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content h1 {
+    font-size: 36px;
+}
+
+.content P {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.authSec1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.authSec1>* {
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.authSec1>*:hover {
+    background-color: rgba(195, 195, 195, 0.312);
+}
+
+.authSec1>*::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.authSec1>*.active::after {
+    display: block;
+}
+
+.authSec2 {
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.authSec2>* {
+    width: 100%;
+    height: 45px;
+    padding: 0 25px;
+    border: .1px solid black;
+    outline: none;
+    font-size: medium;
+    font-weight: 500;
+    border-radius: 999px;
+}
+
+input:focus {
+    border: 2px solid black;
+}
+
+.loginBtn {
+    border: none !important;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.authImg {
+    height: 500px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

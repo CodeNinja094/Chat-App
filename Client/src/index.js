@@ -7,9 +7,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Support from './pages/Support';
-import Chat from './pages/Chat';
-import Login from './pages/LogIn';
-import Register from './pages/Register';
+import Auth from './pages/Auth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let allRoutes = createBrowserRouter(
@@ -31,16 +29,12 @@ let allRoutes = createBrowserRouter(
       element: <Support />
     },
     {
-      path: 'chat',
-      element: <Chat />
+      path: 'auth',
+      element: <Auth />
     },
     {
-      path: 'login',
-      element: <Login />
-    },
-    {
-      path: 'register',
-      element: <Register />
+      path: '*',
+      element: <div>404 Not Found</div>
     }
   ]
 )
